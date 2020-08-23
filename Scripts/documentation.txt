@@ -1,0 +1,11 @@
+when adding a new action for a new need:
+- create the new function for the action. bind a key to the function.
+- call AttemptSatisfy from the SatisfactionRules object inside the 
+  Player Action script.
+- create a new need script inheriting from Need
+- add the need to the Needventory object as a component, and also add it to
+  the list of needs through the inspector.
+- create a new rule script for that action, inherit from Rule class
+- implement the isSatisfied function inside the Rule script
+
+- add the rule to the list of rules under Satisfaction Rule in the inspector

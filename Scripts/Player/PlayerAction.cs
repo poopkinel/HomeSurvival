@@ -1,10 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [System.Serializable]
 public class PlayerAction : MonoBehaviour
 {
+	public EventLogic eventLogic;
+	// temp for testing
+	public Resource egg;
+	public Resource pan;
+	
 	//public SatisfactionRules satisfactionRules;
 	
 	// split to UI - the Rect, 
@@ -61,6 +67,13 @@ public class PlayerAction : MonoBehaviour
         
     }
 
+	//public void MixTwo(Resource first, Resource second)
+	public void Mix(List<Resource> resources)
+	{
+		//eventLogic.AttemptAction(first, second, "Mix");
+		eventLogic.AttemptAction(resources, "Mix");
+	}
+	
     void Update()
     {
 		// Match Input from Keyboard to Action
@@ -70,6 +83,19 @@ public class PlayerAction : MonoBehaviour
 		}
 		if (Input.GetKeyDown(KeyCode.C)){
 			CryForFood();
+		}
+		
+		if (Input.GetKeyDown(KeyCode.T)){
+			GameEvents.current.EatTrigger();
+		}
+		
+		//
+		
+		if (Input.GetKeyDown(KeyCode.M)){
+			// for temp testing
+			List<Resource> tempResources = new List<Resource> { egg, pan };//egg, pan } ;
+			Mix(tempResources);
+			//MixTwo(egg, pan);
 		}
     }
 }

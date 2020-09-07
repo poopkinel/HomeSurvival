@@ -5,14 +5,14 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
 	public Transform itemDest;
-	public RectTransform hunger ;
-	public RectTransform thirst ;
+	//public RectTransform hunger ;
+	//public RectTransform thirst ;
 
-	float feedingRate = 0.1f;
-	float maxFood = 0.7f;
+	//float feedingRate = 0.1f;
+	//float maxFood = 0.7f;
 	
-	float drinkingRate = 0.4f;
-	float maxFluid = 0.7f;
+	//float drinkingRate = 0.4f;
+	//float maxFluid = 0.7f;
     
 	bool itemGrab = false;
 	public void Update(){
@@ -34,7 +34,7 @@ public class PickUp : MonoBehaviour
 		this.transform.position = itemDest.position;
 		this.transform.parent = GameObject.Find("First Person Player").transform;
 		
-		if (Input.GetKeyUp(KeyCode.C)){
+		/*if (Input.GetKeyUp(KeyCode.C)){
 			Vector3 h = hunger.localScale;
 			h.y += feedingRate;
 			h.y = Mathf.Clamp(h.y, 0.2f, maxFood);
@@ -45,7 +45,7 @@ public class PickUp : MonoBehaviour
 			t.y = Mathf.Clamp(t.y, 0.2f, maxFluid);
 			thirst.localScale = t;	
 		}
-		
+		*/
 	}
 	public void onItemReleased(){
 		this.transform.parent = null;

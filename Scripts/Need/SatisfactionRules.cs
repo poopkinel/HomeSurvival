@@ -23,6 +23,7 @@ public class SatisfactionRules : MonoBehaviour
 	//public List<Need> needs;
 	// - - list of 
 	
+	// This should be a list of Needs (Attempt Satisfy Needs)
 	public void AttemptSatisfy(Need need, float increaseRate, string ruleName){
 		//get component by name (ruleName)
 		//Rule rule = this.FindObjectsOfType<typeof(Rule)>().ToList().Find( x=>x.name == ruleName + " Rule");

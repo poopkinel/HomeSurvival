@@ -206,6 +206,17 @@ public class NeedsUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		
+		for (int i=0; i < needventory.needs.Count; i ++){
+			Need need = needventory.needs[i];
+			RectTransform curNeedRectTransform = GameObject.Find("Current Panel "+need.needName).GetComponent<RectTransform>();
+			var ls = curNeedRectTransform.localScale;
+			ls.y = need.current;
+			curNeedRectTransform.localScale = ls;
+		}
+		
+		/*
+		
 		Need need = needventory.needs[0]; //temp for testing
 		// for each need in needs:
         // read panel info (current, and in future thresholds):
@@ -239,7 +250,7 @@ public class NeedsUI : MonoBehaviour
 		// (discovered or changed relationship).
 		// if added:
 		// add a new panel with AddNeedPanels(newNeed)
-		
+		*/
     }
 	
 
